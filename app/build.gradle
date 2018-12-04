@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner rootProject.ext.android.instrumentationRunner
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig getSigningConfig()
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    def appName = "RedMartAssignment"
+                    if (outputFileName != null && outputFileName.endsWith('.apk')) {
+                        outputFileName = appName + " " + defaultConfig.versionName + ".apk"
+                    }
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.supportAppcompatV7
+    implementation rootProject.ext.supportDesign
+    implementation rootProject.ext.supportConstraint
+    implementation rootProject.ext.supportVectorDrawable
+    implementation rootProject.ext.supportRecyclerView
+    implementation rootProject.ext.supportCardView
+    implementation rootProject.ext.supportRetrofit
+    implementation rootProject.ext.supportRetrofitConverter
+    implementation rootProject.ext.supportGlide
+    implementation rootProject.ext.supportOkHttp
+    implementation rootProject.ext.supportV4
+    testImplementation rootProject.ext.supportJunit
+    androidTestImplementation rootProject.ext.supportTestRunner
+    androidTestImplementation rootProject.ext.supportEspressoTest
+}

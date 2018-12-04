@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/product_margin"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="@dimen/product_image_radius">
+
+        <ProgressBar
+            android:id="@+id/product_progress"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="@dimen/activity_margin"
+            android:layout_height="@dimen/activity_margin"
+            android:layout_gravity="center"
+            android:theme="@style/CircularProgress" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/product_image_height"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:scaleType="fitXY" />
+
+            <com.redmart.assignment.ui.custom_view.TitleTextView
+                android:id="@+id/product_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_image"
+                android:paddingLeft="@dimen/product_title_padding"
+                android:paddingRight="@dimen/product_title_padding"
+                android:paddingTop="@dimen/product_title_padding"
+                android:textColor="@color/product_title"
+                android:textSize="@dimen/product_title" />
+
+            <com.redmart.assignment.ui.custom_view.PriceTextView
+                android:id="@+id/product_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_title"
+                android:paddingBottom="@dimen/products_count_padding_bottom"
+                android:paddingLeft="@dimen/product_title_padding"
+                android:paddingRight="@dimen/product_title_padding"
+                android:textSize="@dimen/items_count" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

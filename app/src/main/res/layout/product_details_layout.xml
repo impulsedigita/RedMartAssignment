@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/product_margin"
+        android:elevation="3dp"
+        card_view:cardCornerRadius="@dimen/product_image_radius">
+
+        <LinearLayout
+            android:id="@+id/details_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="@dimen/product_details_margin"
+            android:orientation="vertical"
+            tools:visibility="visible">
+
+            <com.redmart.assignment.ui.custom_view.TitleTextView
+                android:id="@+id/txt_product_id"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Id" />
+
+            <com.redmart.assignment.ui.custom_view.TitleTextView
+                android:id="@+id/txt_product_title"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Title" />
+
+            <com.redmart.assignment.ui.custom_view.DescTextView
+                android:id="@+id/txt_product_desc"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/activity_margin_quarter"
+                tools:text="Product Description" />
+
+            <Button
+                android:id="@+id/btn_add_to_kart"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/activity_margin_content"
+                android:text="@string/btn_add_to_cart"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</merge>
